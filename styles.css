@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.photo-data{
+    margin: auto;
+    width:60vw;
+}
+   
+.image-container img{
+    /* border: 2px  solid red; */
+    margin: auto;
+    width: 90%;
+    height: 100%;
+}
+#description{
+    text-align: justify !important;
+}
+    
+#previous-search{
+    cursor: pointer;
+    color: blue;
+    margin: auto;
+    text-align: center;
+}
+

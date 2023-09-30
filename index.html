@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <section class="photo-data p-2 bg-dark text-light" >
+            <h1 id="page-heading" class="text-center pt-4">NASA Picture of the Day</h1>
+           <div class="image-container">
+                <img id="image" class="rounded mx-auto d-block mt-4" src="" alt="picture">
+           </div>
+            <h3 id="title" class="text-center mt-4"> </h3>
+            <p id="description" class="text-center p-4 pb-5">Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam sit ad in? Cum illum expedita odit nisi molestias aliquid animi fuga nemo porro vero, assumenda quae quibusdam nobis tenetur! sit amet consectetur, adipisicing elit. Iusto, quisquam?</p>
+        </section>
+ 
+
+
+        <form class="d-flex justify-content-center align-items-center flex-column mt-5" >
+            <h2 >Search Picture of the Day</h2>
+            <label  class="mb-1" for="date">Date</label>
+            <input id="date-input" type="date" required>
+            <button type="submit" id="search-btn" class=" mt-3 btn btn-outline-primary btn-md">Search</button>
+        </form>
+
+
+        <div id="search-history" class=" mb-4">
+            <h4 class="text-center  p-3 mt-4 bg-dark text-light">Previous-search</h4>
+            <!-- <p id="previous-search" onclick="searchHistory(event)">23-10-22</p> -->
+        </div>
+        <div class="clear-btn d-flex justify-content-center">
+            <button id="clear-search-btn" class="mb-2 btn btn-outline-danger btn-sm">Clear History</button>
+        </div>
+</main>
+    
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
