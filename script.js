@@ -13,6 +13,8 @@ const searchHistoryContainer=document.getElementById("search-history");
 const prevSearch=document.getElementById("previous-search");
 const pageHeading=document.getElementById("page-heading");
 const clearHistoryBtn=document.getElementById("clear-search-btn");
+const loader=document.getElementById("loader-sec");
+const mainPage=document.getElementById("main-page")
 
 
 //render search history from local Storage;
@@ -32,7 +34,11 @@ function renderSearchHistory(){
 renderSearchHistory();
 
 
-const searchArr=[];
+let searchArr=[];
+if(localStorage.getItem("search")){
+    searchArr=JSON.parse(localStorage.getItem("search"));
+}
+
 //store date in localStorage
 function storeDate(data){
     let obj={date:data}
@@ -58,9 +64,12 @@ let today=formDate();
 //fetch api here
 async function fetchData(today){
     try{
+        loader.style.display="flex";
+        mainPage.style.display="none";
         const response=await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today}`);
         const data=await response.json();
         renderData(data); 
+
     }   
     catch{
         alert("some error occured");
@@ -71,6 +80,10 @@ fetchData(today);
 
 //rendering data here which is coming from nasa api
 function renderData(obj){
+
+    loader.style.display="none";
+    mainPage.style.display="block";
+    
     // console.log(obj);
     image.src=obj.url;
     title.innerText=obj.title;
@@ -125,7 +138,6 @@ function searchHistory(event){
     updateHeading(srchHist);
 }
 
-console.log(prevSearch);
 
 //render after clearing the local storage
 function cleanHistory(){
@@ -137,8 +149,7 @@ function cleanHistory(){
 clearHistoryBtn.addEventListener("click",()=>{
     localStorage.clear();
     if(!prevSearch){
-        cleanHistory(" ");
+        cleanHistory();
     }
     
-   
 })
